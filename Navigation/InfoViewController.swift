@@ -1,13 +1,13 @@
 //
-//  ViewController.swift
+//  InfoViewController.swift
 //  Navigation
 //
-//  Created by R2-D2 on 22.03.2023.
+//  Created by R2-D2 on 24.03.2023.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
+class InfoViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
