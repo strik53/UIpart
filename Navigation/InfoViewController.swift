@@ -8,22 +8,71 @@
 import UIKit
 
 class InfoViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
+    
+   
+    
+    // На InfoViewController создайте кнопку. При нажатии на неё должен показаться UIAlertController с заданным title, message и двумя UIAlertAction. При нажатии на UIAlertAction в консоль должно выводиться сообщение.
     
 
-    /*
-    // MARK: - Navigation
+    
+    
+    
+             
+        override func viewDidLoad() {
+            super.viewDidLoad()
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+            view.backgroundColor = .systemGray3
+            
+            createAlertButton()
+        }
+        
+        private func createAlertButton() {
+            let button = UIButton()
+            button.translatesAutoresizingMaskIntoConstraints = false
+            button.setTitle("Alert", for: .normal)
+            button.backgroundColor = .systemYellow
+            button.setTitleColor(.black, for: .normal)
+            button.addTarget(self, action: #selector(tapAlertButton), for: .touchUpInside)
+            
+            button.layer.cornerRadius = 8
+           
+                    
+            view.addSubview(button)
+            
+            NSLayoutConstraint.activate([
+                button.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+                button.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
+                button.heightAnchor.constraint(equalToConstant: 50),
+                button.widthAnchor.constraint(equalToConstant: 100)
+            ])
+        }
+        
+        @objc func tapAlertButton() {
+            let alert = UIAlertController(title: "!!WARNING!!",
+                                          message: "Choose Left or Right?",
+                                          preferredStyle: .alert)
+            // add two buttons
+            let fine = UIAlertAction(title: "Left", style: .default) { _ in
+                print("Left")
+            }
+            alert.addAction(fine)
+            
+            let so = UIAlertAction(title: "Right", style: .destructive) { _ in
+                print("Right")
+            }
+            alert.addAction(so)
+
+            self.present(alert, animated: true, completion: nil)
+        }
+        
+       
     }
-    */
-
-}
+    
+    
+    
+    
+    
+    
+        
+        
+        
