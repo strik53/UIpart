@@ -51,7 +51,7 @@ class InfoViewController: UIViewController {
             let alert = UIAlertController(title: "!!WARNING!!",
                                           message: "Choose Left or Right?",
                                           preferredStyle: .alert)
-            // add two buttons
+            // options
             let left = UIAlertAction(title: "Left", style: .default) { _ in
                 print("<<< left")
             }
