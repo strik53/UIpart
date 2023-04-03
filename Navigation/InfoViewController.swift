@@ -52,15 +52,15 @@ class InfoViewController: UIViewController {
                                           message: "Choose Left or Right?",
                                           preferredStyle: .alert)
             // add two buttons
-            let fine = UIAlertAction(title: "Left", style: .default) { _ in
-                print("Left")
+            let left = UIAlertAction(title: "Left", style: .default) { _ in
+                print("<<< left")
             }
-            alert.addAction(fine)
+            alert.addAction(left)
             
-            let so = UIAlertAction(title: "Right", style: .destructive) { _ in
-                print("Right")
+            let right = UIAlertAction(title: "Right", style: .destructive) { _ in
+                print(">>> right")
             }
-            alert.addAction(so)
+            alert.addAction(right)
 
             self.present(alert, animated: true, completion: nil)
         }
